@@ -1,5 +1,7 @@
 <?php
 use App\Controllers\IndexController;
+use App\Controllers\PostsController;
+use App\Controllers\UserController;
 use Slim\App;
 use Slim\Http\Environment;
 use Slim\Http\Uri;
@@ -34,9 +36,18 @@ $container['view'] = function ($container) {
 //App routes
 $app->get('/', function ($request, $response, $args) {
     $controller = new IndexController($this, null);
-    return $controller->index($request, $response, $args);
-})->setName('index');;
+    return $controller->indexPage($request, $response, $args);
+})->setName('index');
 
+$app->get('/login', function ($request, $response, $args) {
+    $controller = new UserController($this, null);
+    return $controller->loginPage($request, $response, $args);
+})->setName('login');
+
+$app->get('/admin/posts', function ($request, $response, $args) {
+    $controller = new PostsController($this, null);
+    return $controller->postsPage($request, $response, $args);
+})->setName('posts');
 
 // Run app
 $app->run();
