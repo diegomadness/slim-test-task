@@ -5,15 +5,13 @@ namespace App\Controllers;
 use Slim\Container;
 
 /**
- * @property Container $container
- * @property $db
+ * @property Container $app
  */
 class Controller
 {
 
-    public function __construct(Container $container, $db)
+    public function __construct(Container $container)
     {
-        $this->container = $container;
-        $this->db = $db;
+        $this->app = $container;
     }
 }
