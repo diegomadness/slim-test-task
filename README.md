@@ -1,12 +1,2 @@
 # Slim framework microblog test task
-
-## Installation:
-* todo
-
-## Config setup:
-
-
-## Technologies used:
-
-
-## Modules/Libraries/Packages used:
+This is a WIP skeleton for an MVC application
