@@ -66,6 +66,12 @@ $app->get('/login', function ($request, $response, $args) {
     return $controller->loginPage($request, $response, $args);
 })->setName('login');
 
+$app->post('/login', function ($request, $response, $args) {
+    $controller = new UserController($this);
+    return $controller->login($request, $response, $args);
+})->setName('loginPost');
+
+
 $app->get('/admin/posts', function ($request, $response, $args) {
     $controller = new PostsController($this);
     return $controller->postsPage($request, $response, $args);

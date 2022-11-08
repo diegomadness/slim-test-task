@@ -4,7 +4,9 @@ namespace App\Models;
 
 class User extends Model
 {
-    protected $table = 'users';
+    public static $table = 'users';
+    public $fields = ['username', 'password'];
+
     public $id;
     public $username;
     public $password;
