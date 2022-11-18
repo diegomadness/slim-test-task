@@ -9,7 +9,7 @@ Sign in
     <div class="row justify-content-center">
         <div class="col-md-6 p-5 pt-0">
             <h1 class="fs-5">Sign in</h1>
-            <form class="" action="{{ path_for('loginPost') }}" method="post">
+            <form id="loginForm" method="post">
                 <div class="form-floating mb-3">
                     <input class="form-control rounded-3" name="username" placeholder="Username">
                     <label for="floatingInput">Username</label>
@@ -23,4 +23,16 @@ Sign in
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+    $("#loginForm").submit(function (event) {
+        event.preventDefault();
+        $.post("{{ path_for('loginPost') }}", $(this).serialize())
+            .done(function (data) {
+            location.href ='/admin';
+        });
+    });
+</script>
 {% endblock %}

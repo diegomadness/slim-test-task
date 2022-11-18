@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+/**
+ * @property string $username
+ * @property string $password
+ */
 class User extends Model
 {
-    public static $table = 'users';
-    public $fields = ['username', 'password'];
-
-    public $id;
     public $username;
     public $password;
 }

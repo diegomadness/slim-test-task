@@ -2,12 +2,12 @@
 
 namespace App\Models;
 
+/**
+ * @property string $title
+ * @property string $content
+ */
 class Post extends Model
 {
-    public static $table = 'posts';
-    public $fields = ['title', 'content'];
-
-    public $id;
     public $title;
     public $content;
 }

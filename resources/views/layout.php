@@ -20,5 +20,8 @@
 <div id="content">
     {% block content %}{% endblock %}
 </div>
+
+{% block scripts %}
+{% endblock %}
 </body>
 </html>

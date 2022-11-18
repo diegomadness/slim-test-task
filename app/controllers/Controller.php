@@ -9,7 +9,6 @@ use Slim\Container;
  */
 class Controller
 {
-
     public function __construct(Container $container)
     {
         $this->app = $container;
