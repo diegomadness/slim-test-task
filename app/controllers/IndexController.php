@@ -22,6 +22,7 @@ class IndexController extends Controller
             $posts = $this->postRepository->findAll();
         } catch (\Exception $e) {
             $this->migrate();
+            $posts = $this->postRepository->findAll();
         }
 
         return $this->app->view->render($response, 'index.php', [

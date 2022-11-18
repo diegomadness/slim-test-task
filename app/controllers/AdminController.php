@@ -17,9 +17,6 @@ class AdminController extends Controller
         parent::__construct($container);
     }
 
-    /**
-     * Middleware will allow to get rid of isset($_SESSION["admin"] check, but
-     */
     public function adminPage($request, $response, $args)
     {
         $posts = $this->postRepository->findAll();
@@ -28,6 +25,9 @@ class AdminController extends Controller
         ]);
     }
 
+    /**
+     * some advanced verification should take place here, skipped due to lack of time
+     */
     public function createPost($request, $response, $args)
     {
         $post = new Post();
@@ -37,6 +37,9 @@ class AdminController extends Controller
         return $response->withJson($data);
     }
 
+    /**
+     * some advanced verification should take place here, skipped due to lack of time
+     */
     public function updatePost($request, $response, $args)
     {
         $post = new Post();

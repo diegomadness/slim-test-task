@@ -26,6 +26,7 @@ class UserController extends Controller
 
     public function login($request, $response, $args)
     {
+        //some advanced verification should take place here, skipped due to lack of time
         $username = $request->getParsedBody()['username'];
         $password = $request->getParsedBody()['password'];
 
